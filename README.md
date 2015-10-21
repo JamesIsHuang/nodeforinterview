@@ -19,3 +19,17 @@
 (2)get一般放在URL以variable=value的形式传参，在地址栏可见，请求可被缓存，可以保存在浏览器历史记录中,所以有人说这是不安全的。post则是放在http的消息主体中发送。
 
 (3)get据说是有长度限制，2kb,post没有(我当时胡乱说了20个字节，也真是醉了）。其实这是错误的。
+
+3.问到ajax,这个自己是的确不太会，然而jQuery的ajax的complete回调方法记不住这个实在是有点丢人。现在首先来写写jQuery的ajaxjquery.ajax([setting]) async:true,异步请求；beforeSend(XHR),cache:Boolean,设置为false将不再缓存。complete：请求后完成回调函数
+（成功或失败后都调用）参数：XMLHttpRequest对象和一个描述请求类型的字符串。contentType：类型：string。发送信息至服务器时的内容编码类型。context：类型：Object 这个对象用于设置 Ajax相关回调函数的上下文。也就是说，让回调函数内this指向这个对象（如果不设定这个参数，那么 this 就指向调用本次 AJAX 请求时传递的 options 参数）。比如指定一个 DOM 元素作为 context 参数，这样就设置了 success 回调函数的上下文为这个 DOM 元素。data:类型 string 发送到服务器的数据，将自转化为字符串格式GET 请求中将附加在 URL 后。查看 processData选项说明以禁止此自动转换。必须为Key/Value格式。如果为数组，jQuery将自动为不同值对应同一个名称。如 {foo:["bar1", "bar2"]} 转换为 '&foo=bar1&foo=bar2'。
+
+beforeSend
+在发送请求之前调用，并且传入一个 XMLHttpRequest 作为参数。
+error
+在请求出错时调用。传入 XMLHttpRequest 对象，描述错误类型的字符串以及一个异常对象（如果有的话）
+dataFilter
+在请求成功之后调用。传入返回的数据以及 "dataType" 参数的值。并且必须返回新的数据（可能是处理过的）传递给 success 回调函数。
+success
+当请求之后调用。传入返回后的数据，以及包含成功代码的字符串。
+complete
+当请求完成之后调用这个函数，无论成功或失败。传入 XMLHttpRequest 对象，以及一个包含成功或错误代码的字符串。
