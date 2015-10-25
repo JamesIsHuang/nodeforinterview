@@ -5,7 +5,7 @@
 null,undefined,string,Number,Boolean
 
 
-typeof操作符：返回一下字符串
+typeof操作符：返回以下字符串
 
 
 对于undefined,string,Number,Boolean,Object(对象或者null),function
