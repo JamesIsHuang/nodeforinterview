@@ -2,7 +2,7 @@
 1.js基础类型
 
 
-null,undefined,string,Number,Boolean
+null,undefined,string,Number,Boolean,object
 
 
 typeof操作符：返回以下字符串
